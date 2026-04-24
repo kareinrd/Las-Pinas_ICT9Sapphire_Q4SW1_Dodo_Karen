@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Seatwork 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 320px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        input[type="submit"] {
+            flex: 1;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="button"] {
+            flex: 1;
+            padding: 10px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        input[type="button"]:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <h2>Login</h2>
+        <form onsubmit="authenticate(event)">
+            <div class="form-group">
+                <label for="uname">Username</label>
+                <input type="text" id="uname" placeholder="Enter Username" required>
+            </div>
+            <div class="form-group">
+                <label for="pword">Password</label>
+                <input type="password" id="pword" placeholder="Enter Password" required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="stay-logged-in">
+                <label for="stay-logged-in" style="margin-bottom: 0; font-weight: normal;">Stay logged in</label>
+            </div>
+            <div class="button-group">
+                <input type="submit" value="Login">
+                <input type="button" value="Cancel" onclick="document.querySelector('form').reset()">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function authenticate(event){
+            event.preventDefault();
+            const sapphire1 = document.getElementById("uname").value;
+            const sapphire2 = document.getElementById("pword").value;
+            
+            if(sapphire1 === "janedoe" && sapphire2 === "password123"){
+                alert("Welcome " +  sapphire1 + "!");
+            } else {
+                alert("Incorrect username/password");
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
